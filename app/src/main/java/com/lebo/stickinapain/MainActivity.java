@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mGameView = (GameView)findViewById(R.id.mGameVimew);
+        mGameView.setOriginPins(new double[]{0, 90, 180});
     }
 
     private void startToUpdateGameView() {

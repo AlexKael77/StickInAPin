@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/StickInAPain.iml" filepath="$PROJECT_DIR$/StickInAPain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StickInAPin.iml" filepath="$PROJECT_DIR$/StickInAPin.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
