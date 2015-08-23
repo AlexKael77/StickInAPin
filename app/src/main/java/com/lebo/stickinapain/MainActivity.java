@@ -6,11 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
 
 import com.lebo.stickinapain.view.GameView;
-
-import java.lang.ref.WeakReference;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,13 +23,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mGameView = (GameView)findViewById(R.id.mGameVimew);
         mGameView.setOriginPins(new double[]{0, 90, 180});
+        mGameView.setmTotalPins(10);
+        mGameView.setmLevel(1);
     }
 
     private void startToUpdateGameView() {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                while (mResumed){
+                while (mResumed && !mGameView.ismLevelFailed() && !mGameView.ismLevelPassed()){
                     mGameView.setmAngle((mGameView.getmAngle() + mAngleInc) % 360);
                     mHandler.sendEmptyMessage(refresh_game_view);
                     try {
